@@ -12,3 +12,12 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString owner = ui->tf_owner->text();
+    QString marca = ui->tf_marca->text();
+    QString placa = ui->tf_placa->text();
+    int tipo;
+    double tanque;
+}
