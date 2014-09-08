@@ -8,13 +8,9 @@ class Carro
     QString marca;
     QString owner;
     QString placa;
-    int tipo;
+    QString tipo;
     double tanque;
     QList<double> llenados;//Debo hacer clase compuesta
-    double kmporlitro;
-    double kmporgalon;
-    double litrosporkm;
-    double litrosaldia;
 
 public:
     Carro();
@@ -26,20 +22,10 @@ public:
     void setOwner(const QString &value);
     QString getPlaca() const;
     void setPlaca(const QString &value);
-    int getTipo() const;
-    void setTipo(int value);
     double getTanque() const;
     void setTanque(double value);
-    QList<double> getLlenados() const;
-    void setLlenados(const QList<double> &value);
-    double getKmporlitro() const;
-    void setKmporlitro(double value);
-    double getKmporgalon() const;
-    void setKmporgalon(double value);
-    double getLitrosporkm() const;
-    void setLitrosporkm(double value);
-    double getLitrosaldia() const;
-    void setLitrosaldia(double value);
+    QString getTipo() const;
+    void setTipo(const QString &value);
 };
 
 #endif // CARRO_H

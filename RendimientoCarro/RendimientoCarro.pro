@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    carro.cpp
+    carro.cpp \
+    llenados.cpp
 
 HEADERS  += mainwindow.h \
-    carro.h
+    carro.h \
+    llenados.h
 
 FORMS    += mainwindow.ui

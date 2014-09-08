@@ -169,17 +169,17 @@
       </property>
       <item>
        <property name="text">
-        <string>1) Super (22.50 Lps.)</string>
+        <string>Super</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>2) Regular (17.80 Lps.)</string>
+        <string>Regular</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>3) Diesel (19.00 Lps.)</string>
+        <string>Diesel</string>
        </property>
       </item>
      </widget>

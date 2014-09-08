@@ -41,16 +41,6 @@ void Carro::setPlaca(const QString &value)
     placa = value;
 }
 
-int Carro::getTipo() const
-{
-    return tipo;
-}
-
-void Carro::setTipo(int value)
-{
-    tipo = value;
-}
-
 double Carro::getTanque() const
 {
     return tanque;
@@ -61,54 +51,16 @@ void Carro::setTanque(double value)
     tanque = value;
 }
 
-QList<double> Carro::getLlenados() const
+
+
+QString Carro::getTipo() const
 {
-    return llenados;
+    return tipo;
 }
 
-void Carro::setLlenados(const QList<double> &value)
+void Carro::setTipo(const QString &value)
 {
-    llenados = value;
-}
-
-double Carro::getKmporlitro() const
-{
-    return kmporlitro;
-}
-
-void Carro::setKmporlitro(double value)
-{
-    kmporlitro = value;
-}
-
-double Carro::getKmporgalon() const
-{
-    return kmporgalon;
-}
-
-void Carro::setKmporgalon(double value)
-{
-    kmporgalon = value;
-}
-
-double Carro::getLitrosporkm() const
-{
-    return litrosporkm;
-}
-
-void Carro::setLitrosporkm(double value)
-{
-    litrosporkm = value;
-}
-
-double Carro::getLitrosaldia() const
-{
-    return litrosaldia;
-}
-
-void Carro::setLitrosaldia(double value)
-{
-    litrosaldia = value;
+    tipo = value;
 }
 Carro::Carro()
 {
