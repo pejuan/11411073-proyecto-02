@@ -49,6 +49,12 @@ public:
     QLabel *label_5;
     QComboBox *cb_tipo;
     QLabel *label_6;
+    QWidget *tab_3;
+    QComboBox *cb_carros;
+    QDoubleSpinBox *doubleSpinBox;
+    QLabel *label_7;
+    QPushButton *boton_llenar;
+    QLabel *label_8;
     QWidget *tab_2;
     QTableWidget *Tabla_carros;
     QMenuBar *menuBar;
@@ -107,6 +113,24 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(390, 80, 41, 17));
         tab_1->addTab(tab, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        cb_carros = new QComboBox(tab_3);
+        cb_carros->setObjectName(QStringLiteral("cb_carros"));
+        cb_carros->setGeometry(QRect(10, 100, 401, 41));
+        doubleSpinBox = new QDoubleSpinBox(tab_3);
+        doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
+        doubleSpinBox->setGeometry(QRect(580, 140, 69, 27));
+        label_7 = new QLabel(tab_3);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(480, 146, 101, 21));
+        boton_llenar = new QPushButton(tab_3);
+        boton_llenar->setObjectName(QStringLiteral("boton_llenar"));
+        boton_llenar->setGeometry(QRect(530, 210, 121, 41));
+        label_8 = new QLabel(tab_3);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(160, 60, 101, 21));
+        tab_1->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         Tabla_carros = new QTableWidget(tab_2);
@@ -127,7 +151,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(0);
+        tab_1->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -150,6 +174,10 @@ public:
         );
         label_6->setText(QApplication::translate("MainWindow", "Tipo:", 0));
         tab_1->setTabText(tab_1->indexOf(tab), QApplication::translate("MainWindow", "Agregar Carros", 0));
+        label_7->setText(QApplication::translate("MainWindow", "Litros a llenar", 0));
+        boton_llenar->setText(QApplication::translate("MainWindow", "Llenar", 0));
+        label_8->setText(QApplication::translate("MainWindow", "Lista de carros", 0));
+        tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));
     } // retranslateUi
 

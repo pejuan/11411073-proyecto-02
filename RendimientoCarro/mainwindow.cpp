@@ -1,9 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "carro.h"
-#include "QList"
-QList<Carro> ListaCarros;
+#include <QList>
+#include <QString>
+#include <QStringList>
 
+QList<Carro> ListaCarros;
+QStringList Listastrings;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -33,7 +36,12 @@ void MainWindow::on_pushButton_clicked()
     objcarro.setTanque(tanque);
     objcarro.setTipo(tipo);
     ListaCarros.append(objcarro);
+    Listastrings.append(objcarro.toString());
     ui->tf_marca->setText("");
     ui->tf_owner->setText("");
     ui->tf_placa->setText("");
+    for(int i=0;i<ui->cb_carros->count();i++){
+        ui->cb_carros->removeItem(i);
+    }
+    ui->cb_carros->addItems(Listastrings);
 }

@@ -1,6 +1,7 @@
 #include "carro.h"
 #include <QString>
-
+#include <sstream>
+using namespace std;
 int Carro::getCilindraje() const
 {
     return cilindraje;
@@ -78,6 +79,11 @@ Llenados Carro::getLlenadosAt(int index)const{
 }
 void Carro::add_llenado(Llenados llenado){
     llenados.append(llenado);
+}
+QString Carro::toString()const{
+    QString retval = "Carro Marca:"+marca+"  Placa:"+placa;
+    return retval;
+
 }
 
 Carro::Carro()

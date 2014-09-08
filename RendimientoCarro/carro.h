@@ -32,6 +32,8 @@ public:
     Llenados getLlenadosAt(int)const;
     QList<Llenados> getLlenados() const;
     void setLlenados(const QList<Llenados> &value);
+
+    QString toString()const;
 };
 
 #endif // CARRO_H
