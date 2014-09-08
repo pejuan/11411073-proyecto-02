@@ -2,6 +2,7 @@
 #define CARRO_H
 #include <QString>
 #include <QList>
+#include "llenados.h"
 using namespace std;
 class Carro
 {
@@ -11,7 +12,7 @@ class Carro
     QString placa;
     QString tipo;
     double tanque;
-    QList<double> llenados;//Debo hacer clase compuesta
+    QList<Llenados> llenados;//Debo hacer clase compuesta
 
 public:
     Carro();
@@ -27,6 +28,10 @@ public:
     void setTanque(double value);
     QString getTipo() const;
     void setTipo(const QString &value);
+
+    Llenados getLlenadosAt(QList<Llenados>,int)const;
+    QList<Llenados> getLlenados() const;
+    void setLlenados(const QList<Llenados> &value);
 };
 
 #endif // CARRO_H

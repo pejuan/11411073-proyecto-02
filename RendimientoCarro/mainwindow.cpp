@@ -3,6 +3,7 @@
 #include "carro.h"
 #include "QList"
 QList<Carro> ListaCarros;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)

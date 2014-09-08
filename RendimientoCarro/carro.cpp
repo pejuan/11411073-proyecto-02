@@ -62,6 +62,21 @@ void Carro::setTipo(const QString &value)
 {
     tipo = value;
 }
+
+QList<Llenados> Carro::getLlenados() const
+{
+    return llenados;
+}
+
+void Carro::setLlenados(const QList<Llenados> &value)
+{
+    llenados = value;
+}
+Llenados Carro::getLlenadosAt(QList<Llenados> lista,int index)const{
+    Llenados llenado;
+    llenado = lista[index];
+    return llenado;
+}
 Carro::Carro()
 {
 
