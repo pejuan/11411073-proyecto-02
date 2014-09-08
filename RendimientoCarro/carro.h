@@ -28,8 +28,8 @@ public:
     void setTanque(double value);
     QString getTipo() const;
     void setTipo(const QString &value);
-
-    Llenados getLlenadosAt(QList<Llenados>,int)const;
+    void add_llenado(Llenados);
+    Llenados getLlenadosAt(int)const;
     QList<Llenados> getLlenados() const;
     void setLlenados(const QList<Llenados> &value);
 };

@@ -72,11 +72,14 @@ void Carro::setLlenados(const QList<Llenados> &value)
 {
     llenados = value;
 }
-Llenados Carro::getLlenadosAt(QList<Llenados> lista,int index)const{
-    Llenados llenado;
-    llenado = lista[index];
-    return llenado;
+Llenados Carro::getLlenadosAt(int index)const{
+
+    return llenados[index];
 }
+void Carro::add_llenado(Llenados llenado){
+    llenados.append(llenado);
+}
+
 Carro::Carro()
 {
 
