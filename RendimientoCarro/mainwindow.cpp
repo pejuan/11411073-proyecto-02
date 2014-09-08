@@ -22,10 +22,18 @@ void MainWindow::on_pushButton_clicked()
     QString owner = ui->tf_owner->text();
     QString marca = ui->tf_marca->text();
     QString placa = ui->tf_placa->text();
-    QString tipo = ui->cb_tipo->itemText();
+    QString tipo = ui->cb_tipo->currentText();
     double tanque = ui->sp_tanque->value();
     int cilindraje = ui->sp_cilindraje->value();
     Carro objcarro;
     objcarro.setCilindraje(cilindraje);
-
+    objcarro.setMarca(marca);
+    objcarro.setOwner(owner);
+    objcarro.setPlaca(placa);
+    objcarro.setTanque(tanque);
+    objcarro.setTipo(tipo);
+    ListaCarros.append(objcarro);
+    ui->tf_marca->setText("");
+    ui->tf_owner->setText("");
+    ui->tf_placa->setText("");
 }

@@ -144,9 +144,9 @@ public:
         label_5->setText(QApplication::translate("MainWindow", "Due\303\261o:", 0));
         cb_tipo->clear();
         cb_tipo->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "1) Super (22.50 Lps.)", 0)
-         << QApplication::translate("MainWindow", "2) Regular (17.80 Lps.)", 0)
-         << QApplication::translate("MainWindow", "3) Diesel (19.00 Lps.)", 0)
+         << QApplication::translate("MainWindow", "Super", 0)
+         << QApplication::translate("MainWindow", "Regular", 0)
+         << QApplication::translate("MainWindow", "Diesel", 0)
         );
         label_6->setText(QApplication::translate("MainWindow", "Tipo:", 0));
         tab_1->setTabText(tab_1->indexOf(tab), QApplication::translate("MainWindow", "Agregar Carros", 0));

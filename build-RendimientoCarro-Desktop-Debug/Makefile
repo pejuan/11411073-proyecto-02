@@ -47,10 +47,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../RendimientoCarro/main.cpp \
 		../RendimientoCarro/mainwindow.cpp \
-		../RendimientoCarro/carro.cpp moc_mainwindow.cpp
+		../RendimientoCarro/carro.cpp \
+		../RendimientoCarro/llenados.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		carro.o \
+		llenados.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -283,7 +285,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/RendimientoCarro1.0.0 || mkdir -p .tmp/RendimientoCarro1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/mainwindow.h ../RendimientoCarro/carro.h .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/main.cpp ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/carro.cpp .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/mainwindow.ui .tmp/RendimientoCarro1.0.0/ && (cd `dirname .tmp/RendimientoCarro1.0.0` && $(TAR) RendimientoCarro1.0.0.tar RendimientoCarro1.0.0 && $(COMPRESS) RendimientoCarro1.0.0.tar) && $(MOVE) `dirname .tmp/RendimientoCarro1.0.0`/RendimientoCarro1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/RendimientoCarro1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/mainwindow.h ../RendimientoCarro/carro.h ../RendimientoCarro/llenados.h .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/main.cpp ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/carro.cpp ../RendimientoCarro/llenados.cpp .tmp/RendimientoCarro1.0.0/ && $(COPY_FILE) --parents ../RendimientoCarro/mainwindow.ui .tmp/RendimientoCarro1.0.0/ && (cd `dirname .tmp/RendimientoCarro1.0.0` && $(TAR) RendimientoCarro1.0.0.tar RendimientoCarro1.0.0 && $(COMPRESS) RendimientoCarro1.0.0.tar) && $(MOVE) `dirname .tmp/RendimientoCarro1.0.0`/RendimientoCarro1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/RendimientoCarro1.0.0
 
 
 clean:compiler_clean 
@@ -689,13 +691,8 @@ mainwindow.o: ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/mainwindow.
 		/usr/include/qt5/QtGui/qinputmethod.h \
 		/usr/include/qt5/QtWidgets/QButtonGroup \
 		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
+		/usr/include/qt5/QtWidgets/QComboBox \
+		/usr/include/qt5/QtWidgets/qcombobox.h \
 		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
 		/usr/include/qt5/QtWidgets/qstyleoption.h \
 		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
@@ -706,6 +703,15 @@ mainwindow.o: ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/mainwindow.
 		/usr/include/qt5/QtWidgets/qstyle.h \
 		/usr/include/qt5/QtWidgets/qtabbar.h \
 		/usr/include/qt5/QtWidgets/qrubberband.h \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		/usr/include/qt5/QtCore/qabstractitemmodel.h \
+		/usr/include/qt5/QtWidgets/QDoubleSpinBox \
+		/usr/include/qt5/QtWidgets/qspinbox.h \
+		/usr/include/qt5/QtWidgets/QHeaderView \
+		/usr/include/qt5/QtWidgets/qheaderview.h \
+		/usr/include/qt5/QtWidgets/qabstractitemview.h \
+		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
+		/usr/include/qt5/QtCore/qitemselectionmodel.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
 		/usr/include/qt5/QtWidgets/QLineEdit \
@@ -720,6 +726,7 @@ mainwindow.o: ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/mainwindow.
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
+		/usr/include/qt5/QtWidgets/QSpinBox \
 		/usr/include/qt5/QtWidgets/QStatusBar \
 		/usr/include/qt5/QtWidgets/qstatusbar.h \
 		/usr/include/qt5/QtWidgets/QTabWidget \
@@ -731,7 +738,10 @@ mainwindow.o: ../RendimientoCarro/mainwindow.cpp ../RendimientoCarro/mainwindow.
 		/usr/include/qt5/QtWidgets/QWidget \
 		../RendimientoCarro/carro.h \
 		/usr/include/qt5/QtCore/QString \
-		/usr/include/qt5/QtCore/QList
+		/usr/include/qt5/QtCore/QList \
+		../RendimientoCarro/llenados.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../RendimientoCarro/mainwindow.cpp
 
 carro.o: ../RendimientoCarro/carro.cpp ../RendimientoCarro/carro.h \
@@ -782,8 +792,93 @@ carro.o: ../RendimientoCarro/carro.cpp ../RendimientoCarro/carro.h \
 		/usr/include/qt5/QtCore/QList \
 		/usr/include/qt5/QtCore/qlist.h \
 		/usr/include/qt5/QtCore/qalgorithms.h \
-		/usr/include/qt5/QtCore/qiterator.h
+		/usr/include/qt5/QtCore/qiterator.h \
+		../RendimientoCarro/llenados.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtCore/qpair.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o carro.o ../RendimientoCarro/carro.cpp
+
+llenados.o: ../RendimientoCarro/llenados.cpp ../RendimientoCarro/llenados.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtCore/qpair.h \
+		/usr/include/qt5/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o llenados.o ../RendimientoCarro/llenados.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
