@@ -2,6 +2,7 @@
 #define CARRO_H
 #include <QString>
 #include <QList>
+using namespace std;
 class Carro
 {
     int cilindraje;
