@@ -86,7 +86,59 @@ QString Carro::toString()const{
 
 }
 
+
+double Carro::getKmporlitro() const
+{
+    return kmporlitro;
+}
+
+void Carro::setKmporlitro(double value)
+{
+    kmporlitro = value;
+}
+
+double Carro::getKmporgal() const
+{
+    return kmporgal;
+}
+
+void Carro::setKmporgal(double value)
+{
+    kmporgal = value;
+}
+
+double Carro::getLitroporkm() const
+{
+    return litroporkm;
+}
+
+void Carro::setLitroporkm(double value)
+{
+    litroporkm = value;
+}
+
+double Carro::getLitroaldia() const
+{
+    return litroaldia;
+}
+
+void Carro::setLitroaldia(double value)
+{
+    litroaldia = value;
+}
 Carro::Carro()
 {
+    
+}
 
+void Carro::calculos(){
+    double kmporlitro=0.0;
+    double kmporgal=0.0;
+    double lempporkm=0.0;
+    double lempaldia=0.0;
+    for(int i=0;i<llenados.size();i++){
+        kmporlitro += llenados[i].getKilometros()/llenados[i].getLitro();
+        kmporgal += llenados[i].getKilometros()/llenados[i].getGalones();
+
+    }
 }

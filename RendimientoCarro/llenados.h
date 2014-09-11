@@ -9,6 +9,10 @@ class Llenados
     QDate fecha;
     double galones;
     double kilometros;
+    QString tipogasolina;
+    double precioporlitro;
+    double precioporgalon;
+
 
 public:
     Llenados();
@@ -21,6 +25,12 @@ public:
     void setGalones(double value);
     double getKilometros() const;
     void setKilometros(double value);
+    QString getTipogasolina() const;
+    void setTipogasolina(const QString &value);
+    double getPrecioporlitro() const;
+    void setPrecioporlitro(double value);
+    double getPrecioporgalon() const;
+    void setPrecioporgalon(double value);
 };
 
 #endif // LLENADOS_H

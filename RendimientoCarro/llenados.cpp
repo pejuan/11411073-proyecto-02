@@ -40,6 +40,54 @@ void Llenados::setKilometros(double value)
 {
     kilometros = value;
 }
+
+QString Llenados::getTipogasolina() const
+{
+    return tipogasolina;
+}
+
+void Llenados::setTipogasolina(const QString &value)
+{
+    tipogasolina = value;
+}
+
+double Llenados::getPrecioporlitro() const
+{
+    return precioporlitro;
+}
+
+void Llenados::setPrecioporlitro(double value)
+{
+    if(tipogasolina=="Super"){
+        precioporlitro=20.0;
+
+    }else{
+        if(tipogasolina=="Regular"){
+            precioporlitro=16.8;
+        }else{
+            precioporlitro=18.0;
+        }
+    }
+}
+
+double Llenados::getPrecioporgalon() const
+{
+    return precioporgalon;
+}
+
+void Llenados::setPrecioporgalon(double value)
+{
+    if(tipogasolina=="Super"){
+        precioporgalon=20.0/0.2199;
+
+    }else{
+        if(tipogasolina=="Regular"){
+            precioporgalon=16.8/0.2199;
+        }else{
+            precioporgalon=18.0/0.2199;
+        }
+    }
+}
 Llenados::Llenados()
 {
 

@@ -14,6 +14,11 @@ class Carro
     double tanque;
     QList<Llenados> llenados;//Debo hacer clase compuesta
 
+    double kmporlitro;
+    double kmporgal;
+    double litroporkm;
+    double litroaldia;
+
 public:
     Carro();
     int getCilindraje() const;
@@ -34,6 +39,16 @@ public:
     void setLlenados(const QList<Llenados> &value);
 
     QString toString()const;
+    double getKmporlitro() const;
+    void setKmporlitro(double value);
+    double getKmporgal() const;
+    void setKmporgal(double value);
+    double getLitroporkm() const;
+    void setLitroporkm(double value);
+    double getLitroaldia() const;
+    void setLitroaldia(double value);
+
+    void calculos();
 };
 
 #endif // CARRO_H
