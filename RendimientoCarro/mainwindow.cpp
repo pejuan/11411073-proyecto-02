@@ -20,7 +20,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_boton_llenar_clicked()
+{
+    Llenados llenado;
+    int index = ui->cb_carros->currentIndex();
+    llenado.setLitro(ui->sp_litrosallenar->value());
+    //llenado.setFecha(new QDate());
+    llenado.setTipogasolina(ListaCarros[index].getTipo());
+    llenado.setKilometros(ui->sp_kmrecorridos->value());
+    llenado.setPrecioporlitro(0);
+    llenado.setPrecioporgalon(0);
+    llenado.setGalones((ui->sp_litrosallenar->value())/0.2199);
+
+    ListaCarros[index].add_llenado(llenado);
+
+
+}
+
+void MainWindow::on_boton_agregarcarro_clicked()
 {
     QString owner = ui->tf_owner->text();
     QString marca = ui->tf_marca->text();
@@ -44,12 +62,5 @@ void MainWindow::on_pushButton_clicked()
         ui->cb_carros->removeItem(i);
     }
     ui->cb_carros->addItems(Listastrings);
-}
-
-void MainWindow::on_boton_llenar_clicked()
-{
-    Llenados llenado;
-    llenado.setLitro(ui->sp_litrosallenar->value());
-    llenado.setFecha(new QDate());
-
+    ui->cb_listacarros2->addItems(Listastrings);
 }

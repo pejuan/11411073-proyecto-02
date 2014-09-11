@@ -24,13 +24,13 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>Agregar Carros</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="boton_agregarcarro">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -260,19 +260,71 @@
        <string>Lista de carros</string>
       </property>
      </widget>
+     <widget class="QDoubleSpinBox" name="sp_kmrecorridos">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>80</y>
+        <width>69</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>456</x>
+        <y>80</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Km recorridos</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
       <string>Ver Rendimientos</string>
      </attribute>
-     <widget class="QTableWidget" name="Tabla_carros">
+     <widget class="QComboBox" name="cb_listacarros2">
       <property name="geometry">
        <rect>
-        <x>25</x>
-        <y>20</y>
-        <width>701</width>
-        <height>401</height>
+        <x>10</x>
+        <y>40</y>
+        <width>341</width>
+        <height>27</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_ver_rendimiento">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>20</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ver rendimiento</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="ta_rendimiento">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>90</y>
+        <width>331</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

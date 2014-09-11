@@ -24,7 +24,7 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -36,7 +36,7 @@ public:
     QWidget *centralWidget;
     QTabWidget *tab_1;
     QWidget *tab;
-    QPushButton *pushButton;
+    QPushButton *boton_agregarcarro;
     QLineEdit *tf_marca;
     QLabel *label;
     QLabel *label_2;
@@ -51,12 +51,16 @@ public:
     QLabel *label_6;
     QWidget *tab_3;
     QComboBox *cb_carros;
-    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *sp_litrosallenar;
     QLabel *label_7;
     QPushButton *boton_llenar;
     QLabel *label_8;
+    QDoubleSpinBox *sp_kmrecorridos;
+    QLabel *label_9;
     QWidget *tab_2;
-    QTableWidget *Tabla_carros;
+    QComboBox *cb_listacarros2;
+    QPushButton *boton_ver_rendimiento;
+    QTextEdit *ta_rendimiento;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -73,9 +77,9 @@ public:
         tab_1->setGeometry(QRect(0, 0, 771, 471));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(460, 330, 151, 61));
+        boton_agregarcarro = new QPushButton(tab);
+        boton_agregarcarro->setObjectName(QStringLiteral("boton_agregarcarro"));
+        boton_agregarcarro->setGeometry(QRect(460, 330, 151, 61));
         tf_marca = new QLineEdit(tab);
         tf_marca->setObjectName(QStringLiteral("tf_marca"));
         tf_marca->setGeometry(QRect(120, 80, 141, 27));
@@ -118,9 +122,9 @@ public:
         cb_carros = new QComboBox(tab_3);
         cb_carros->setObjectName(QStringLiteral("cb_carros"));
         cb_carros->setGeometry(QRect(10, 100, 401, 41));
-        doubleSpinBox = new QDoubleSpinBox(tab_3);
-        doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
-        doubleSpinBox->setGeometry(QRect(580, 140, 69, 27));
+        sp_litrosallenar = new QDoubleSpinBox(tab_3);
+        sp_litrosallenar->setObjectName(QStringLiteral("sp_litrosallenar"));
+        sp_litrosallenar->setGeometry(QRect(580, 140, 69, 27));
         label_7 = new QLabel(tab_3);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(480, 146, 101, 21));
@@ -130,12 +134,26 @@ public:
         label_8 = new QLabel(tab_3);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(160, 60, 101, 21));
+        sp_kmrecorridos = new QDoubleSpinBox(tab_3);
+        sp_kmrecorridos->setObjectName(QStringLiteral("sp_kmrecorridos"));
+        sp_kmrecorridos->setGeometry(QRect(580, 80, 69, 27));
+        label_9 = new QLabel(tab_3);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(456, 80, 101, 31));
         tab_1->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
-        Tabla_carros = new QTableWidget(tab_2);
-        Tabla_carros->setObjectName(QStringLiteral("Tabla_carros"));
-        Tabla_carros->setGeometry(QRect(25, 20, 701, 401));
+        cb_listacarros2 = new QComboBox(tab_2);
+        cb_listacarros2->setObjectName(QStringLiteral("cb_listacarros2"));
+        cb_listacarros2->setGeometry(QRect(10, 40, 341, 27));
+        boton_ver_rendimiento = new QPushButton(tab_2);
+        boton_ver_rendimiento->setObjectName(QStringLiteral("boton_ver_rendimiento"));
+        boton_ver_rendimiento->setGeometry(QRect(520, 20, 131, 41));
+        ta_rendimiento = new QTextEdit(tab_2);
+        ta_rendimiento->setObjectName(QStringLiteral("ta_rendimiento"));
+        ta_rendimiento->setEnabled(true);
+        ta_rendimiento->setGeometry(QRect(430, 90, 331, 321));
+        ta_rendimiento->setReadOnly(true);
         tab_1->addTab(tab_2, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -151,7 +169,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(1);
+        tab_1->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -160,7 +178,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Agregar Carro", 0));
+        boton_agregarcarro->setText(QApplication::translate("MainWindow", "Agregar Carro", 0));
         label->setText(QApplication::translate("MainWindow", "Marca de carro:", 0));
         label_2->setText(QApplication::translate("MainWindow", "Placa:", 0));
         label_3->setText(QApplication::translate("MainWindow", "Cilindraje", 0));
@@ -177,7 +195,9 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "Litros a llenar", 0));
         boton_llenar->setText(QApplication::translate("MainWindow", "Llenar", 0));
         label_8->setText(QApplication::translate("MainWindow", "Lista de carros", 0));
+        label_9->setText(QApplication::translate("MainWindow", "Km recorridos", 0));
         tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
+        boton_ver_rendimiento->setText(QApplication::translate("MainWindow", "Ver rendimiento", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));
     } // retranslateUi
 
