@@ -45,3 +45,11 @@ void MainWindow::on_pushButton_clicked()
     }
     ui->cb_carros->addItems(Listastrings);
 }
+
+void MainWindow::on_boton_llenar_clicked()
+{
+    Llenados llenado;
+    llenado.setLitro(ui->sp_litrosallenar->value());
+    llenado.setFecha(new QDate());
+
+}

@@ -107,15 +107,7 @@ void Carro::setKmporgal(double value)
     kmporgal = value;
 }
 
-double Carro::getLitroporkm() const
-{
-    return litroporkm;
-}
 
-void Carro::setLitroporkm(double value)
-{
-    litroporkm = value;
-}
 
 double Carro::getLitroaldia() const
 {
@@ -125,6 +117,16 @@ double Carro::getLitroaldia() const
 void Carro::setLitroaldia(double value)
 {
     litroaldia = value;
+}
+
+double Carro::getLempporkm() const
+{
+    return lempporkm;
+}
+
+void Carro::setLempporkm(double value)
+{
+    lempporkm = value;
 }
 Carro::Carro()
 {
@@ -136,9 +138,21 @@ void Carro::calculos(){
     double kmporgal=0.0;
     double lempporkm=0.0;
     double lempaldia=0.0;
+
+
+    for(int i=0;i<llenados.size();i++){
+        llenados[i].setTipogasolina(tipo);
+        llenados[i].setPrecioporlitro(0);
+        llenados[i].setPrecioporgalon(0);
+    }
     for(int i=0;i<llenados.size();i++){
         kmporlitro += llenados[i].getKilometros()/llenados[i].getLitro();
         kmporgal += llenados[i].getKilometros()/llenados[i].getGalones();
+        lempporkm =(llenados[i].getPrecioporlitro()*llenados[i].getLitro())/(llenados[i].getKilometros());
 
     }
+    this->setKmporlitro(kmporlitro);
+    this->setKmporgal(kmporgal);
+    this->setLempporkm(lempporkm);
+
 }

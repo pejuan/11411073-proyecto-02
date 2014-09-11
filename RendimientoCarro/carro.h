@@ -16,7 +16,7 @@ class Carro
 
     double kmporlitro;
     double kmporgal;
-    double litroporkm;
+    double lempporkm;
     double litroaldia;
 
 public:
@@ -43,12 +43,13 @@ public:
     void setKmporlitro(double value);
     double getKmporgal() const;
     void setKmporgal(double value);
-    double getLitroporkm() const;
-    void setLitroporkm(double value);
+
     double getLitroaldia() const;
     void setLitroaldia(double value);
 
     void calculos();
+    double getLempporkm() const;
+    void setLempporkm(double value);
 };
 
 #endif // CARRO_H

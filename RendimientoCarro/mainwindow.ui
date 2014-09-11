@@ -211,7 +211,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <widget class="QDoubleSpinBox" name="sp_litrosallenar">
       <property name="geometry">
        <rect>
         <x>580</x>
