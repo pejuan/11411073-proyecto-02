@@ -4,6 +4,7 @@
 #include <QList>
 #include <QString>
 #include <QStringList>
+#include <QMessageBox>
 
 QList<Carro> ListaCarros;
 QStringList Listastrings;
@@ -26,7 +27,6 @@ void MainWindow::on_boton_llenar_clicked()
     Llenados llenado;
     int index = ui->cb_listacarros2->currentIndex();
     llenado.setLitro(ui->sp_litrosallenar->value());
-    //llenado.setFecha(new QDate());
     llenado.setTipogasolina(ListaCarros[index].getTipo());
     llenado.setKilometros(ui->sp_kmrecorridos->value());
     llenado.setPrecioporlitro(0);
@@ -62,8 +62,15 @@ void MainWindow::on_boton_agregarcarro_clicked()
     for(int i=0;i<ui->cb_carros->count();i++){
         ui->cb_carros->removeItem(i);
     }
+    for(int i=0;i<ui->cb_listacarros2->count();i++){
+        ui->cb_listacarros2->removeItem(i);
+    }
+    for(int i=0;i<ui->cb_carroseliminar->count();i++){
+        ui->cb_carroseliminar->removeItem(i);
+    }
     ui->cb_carros->addItems(Listastrings);
     ui->cb_listacarros2->addItems(Listastrings);
+    ui->cb_carroseliminar->addItems(Listastrings);
 }
 
 void MainWindow::on_boton_ver_rendimiento_clicked()
@@ -71,5 +78,21 @@ void MainWindow::on_boton_ver_rendimiento_clicked()
     int indice = ui->cb_listacarros2->currentIndex();
     ListaCarros[indice].calculos();
     ui->ta_rendimiento->setText(ListaCarros[indice].rendimientoString());
+
+}
+
+void MainWindow::on_boton_eliminar_carro_clicked()
+{
+    int index = ui->cb_carroseliminar->currentIndex();
+    QMessageBox::about(this,"Eliminando","Esta eliminando el carro"+ListaCarros[index].toString());
+    ListaCarros.removeAt(index);
+    Listastrings.removeAt(index);
+    ui->cb_carros->clear();
+    ui->cb_carroseliminar->clear();
+    ui->cb_listacarros2->clear();
+    ui->cb_carros->addItems(Listastrings);
+    ui->cb_listacarros2->addItems(Listastrings);
+    ui->cb_carroseliminar->addItems(Listastrings);
+
 
 }

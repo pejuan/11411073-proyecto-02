@@ -23,6 +23,8 @@ private slots:
 
     void on_boton_ver_rendimiento_clicked();
 
+    void on_boton_eliminar_carro_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
