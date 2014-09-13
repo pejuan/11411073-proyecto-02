@@ -122,9 +122,12 @@ void MainWindow::on_boton_guardardatos_clicked()
 
 void MainWindow::on_boton_descargardatos_clicked()
 {
+    /*
     QFile file("/home/pejuan/11411073-proyecto-02/carros.dat");
     file.open(QIODevice::ReadOnly);
     QDataStream stream(&file);
     stream.readRawData(reinterpret_cast<char *>(&ListaCarros), sizeof(ListaCarros));
+
     file.close();
+    */
 }
