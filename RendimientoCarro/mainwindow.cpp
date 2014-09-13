@@ -84,15 +84,20 @@ void MainWindow::on_boton_ver_rendimiento_clicked()
 void MainWindow::on_boton_eliminar_carro_clicked()
 {
     int index = ui->cb_carroseliminar->currentIndex();
-    QMessageBox::about(this,"Eliminando","Esta eliminando el carro"+ListaCarros[index].toString());
-    ListaCarros.removeAt(index);
-    Listastrings.removeAt(index);
-    ui->cb_carros->clear();
-    ui->cb_carroseliminar->clear();
-    ui->cb_listacarros2->clear();
-    ui->cb_carros->addItems(Listastrings);
-    ui->cb_listacarros2->addItems(Listastrings);
-    ui->cb_carroseliminar->addItems(Listastrings);
+    QMessageBox::StandardButton respuesta;
+    respuesta = QMessageBox::question(this,"Warning","Seguro que quiere eliminar el "+ListaCarros[index].toString(),QMessageBox::Yes|QMessageBox::No);
+    if(respuesta==QMessageBox::Yes){
+        ListaCarros.removeAt(index);
+        Listastrings.removeAt(index);
+        ui->cb_carros->clear();
+        ui->cb_carroseliminar->clear();
+        ui->cb_listacarros2->clear();
+        ui->cb_carros->addItems(Listastrings);
+        ui->cb_listacarros2->addItems(Listastrings);
+        ui->cb_carroseliminar->addItems(Listastrings);
+        QMessageBox::about(this,"Mensaje","Eliminado con éxito");
+    }
+
 
 
 }
