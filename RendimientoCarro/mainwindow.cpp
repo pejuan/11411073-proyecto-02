@@ -110,11 +110,21 @@ void MainWindow::on_boton_eliminar_carro_clicked()
 
 void MainWindow::on_boton_guardardatos_clicked()
 {
-    QFile file("carros.dat");
+    QFile file("/home/pejuan/11411073-proyecto-02/carros.dat");
 
     file.open(QIODevice::WriteOnly);
     QDataStream qdstream(&file);
     qdstream.writeRawData(reinterpret_cast<char *>(&ListaCarros),sizeof(ListaCarros));
     file.close();
+    QMessageBox::about(this,"Mensaje","Guardado con exito");
 
+}
+
+void MainWindow::on_boton_descargardatos_clicked()
+{
+    QFile file("/home/pejuan/11411073-proyecto-02/carros.dat");
+    file.open(QIODevice::ReadOnly);
+    QDataStream stream(&file);
+    stream.readRawData(reinterpret_cast<char *>(&ListaCarros), sizeof(ListaCarros));
+    file.close();
 }

@@ -68,6 +68,8 @@ public:
     QComboBox *cb_listacarros2;
     QPushButton *boton_ver_rendimiento;
     QTextEdit *ta_rendimiento;
+    QPushButton *boton_descargardatos;
+    QPushButton *boton_guardardatos;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -81,7 +83,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         tab_1 = new QTabWidget(centralWidget);
         tab_1->setObjectName(QStringLiteral("tab_1"));
-        tab_1->setGeometry(QRect(0, 0, 771, 471));
+        tab_1->setGeometry(QRect(0, 30, 771, 441));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         boton_agregarcarro = new QPushButton(tab);
@@ -181,6 +183,12 @@ public:
         ta_rendimiento->setGeometry(QRect(430, 90, 331, 321));
         ta_rendimiento->setReadOnly(true);
         tab_1->addTab(tab_2, QString());
+        boton_descargardatos = new QPushButton(centralWidget);
+        boton_descargardatos->setObjectName(QStringLiteral("boton_descargardatos"));
+        boton_descargardatos->setGeometry(QRect(498, 10, 121, 27));
+        boton_guardardatos = new QPushButton(centralWidget);
+        boton_guardardatos->setObjectName(QStringLiteral("boton_guardardatos"));
+        boton_guardardatos->setGeometry(QRect(640, 10, 111, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -195,7 +203,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(1);
+        tab_1->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -228,6 +236,8 @@ public:
         tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
         boton_ver_rendimiento->setText(QApplication::translate("MainWindow", "Ver rendimiento", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));
+        boton_descargardatos->setText(QApplication::translate("MainWindow", "Descargar datos", 0));
+        boton_guardardatos->setText(QApplication::translate("MainWindow", "Guardar datos", 0));
     } // retranslateUi
 
 };

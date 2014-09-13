@@ -27,6 +27,8 @@ private slots:
 
     void on_boton_guardardatos_clicked();
 
+    void on_boton_descargardatos_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
