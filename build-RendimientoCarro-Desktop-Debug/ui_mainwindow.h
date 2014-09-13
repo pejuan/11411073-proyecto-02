@@ -53,6 +53,7 @@ public:
     QWidget *tab_4;
     QComboBox *cb_carroseliminar;
     QPushButton *boton_eliminar_carro;
+    QTextEdit *ta_rendimientoeliminar;
     QWidget *tab_3;
     QComboBox *cb_carros;
     QDoubleSpinBox *sp_litrosallenar;
@@ -127,10 +128,13 @@ public:
         tab_4->setObjectName(QStringLiteral("tab_4"));
         cb_carroseliminar = new QComboBox(tab_4);
         cb_carroseliminar->setObjectName(QStringLiteral("cb_carroseliminar"));
-        cb_carroseliminar->setGeometry(QRect(50, 60, 401, 27));
+        cb_carroseliminar->setGeometry(QRect(10, 110, 401, 27));
         boton_eliminar_carro = new QPushButton(tab_4);
         boton_eliminar_carro->setObjectName(QStringLiteral("boton_eliminar_carro"));
         boton_eliminar_carro->setGeometry(QRect(550, 90, 111, 61));
+        ta_rendimientoeliminar = new QTextEdit(tab_4);
+        ta_rendimientoeliminar->setObjectName(QStringLiteral("ta_rendimientoeliminar"));
+        ta_rendimientoeliminar->setGeometry(QRect(480, 190, 271, 211));
         tab_1->addTab(tab_4, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));

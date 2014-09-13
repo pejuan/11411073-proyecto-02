@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include "carro.h"
 #include <QList>
+#include <QFile>
+#include <QDataStream>
+#include <QDebug>
 #include <QString>
 #include <QStringList>
 #include <QMessageBox>
@@ -84,6 +87,8 @@ void MainWindow::on_boton_ver_rendimiento_clicked()
 void MainWindow::on_boton_eliminar_carro_clicked()
 {
     int index = ui->cb_carroseliminar->currentIndex();
+    ListaCarros[index].calculos();
+    ui->ta_rendimientoeliminar->setText(ListaCarros[index].rendimientoString());
     QMessageBox::StandardButton respuesta;
     respuesta = QMessageBox::question(this,"Warning","Seguro que quiere eliminar el "+ListaCarros[index].toString(),QMessageBox::Yes|QMessageBox::No);
     if(respuesta==QMessageBox::Yes){
@@ -97,7 +102,19 @@ void MainWindow::on_boton_eliminar_carro_clicked()
         ui->cb_carroseliminar->addItems(Listastrings);
         QMessageBox::about(this,"Mensaje","Eliminado con éxito");
     }
+    ui->ta_rendimientoeliminar->setText("");
 
 
+
+}
+
+void MainWindow::on_boton_guardardatos_clicked()
+{
+    QFile file("carros.dat");
+
+    file.open(QIODevice::WriteOnly);
+    QDataStream qdstream(&file);
+    qdstream.writeRawData(reinterpret_cast<char *>(&ListaCarros),sizeof(ListaCarros));
+    file.close();
 
 }

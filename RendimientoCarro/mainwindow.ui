@@ -18,13 +18,13 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>30</y>
       <width>771</width>
-      <height>471</height>
+      <height>441</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -204,8 +204,8 @@
      <widget class="QComboBox" name="cb_carroseliminar">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>60</y>
+        <x>10</x>
+        <y>110</y>
         <width>401</width>
         <height>27</height>
        </rect>
@@ -222,6 +222,16 @@
       </property>
       <property name="text">
        <string>Eliminar</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="ta_rendimientoeliminar">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>190</y>
+        <width>271</width>
+        <height>211</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -382,6 +392,32 @@
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="boton_descargardatos">
+    <property name="geometry">
+     <rect>
+      <x>498</x>
+      <y>10</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Descargar datos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_guardardatos">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>10</y>
+      <width>111</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Guardar datos</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

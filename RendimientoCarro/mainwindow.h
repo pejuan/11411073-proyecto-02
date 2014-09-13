@@ -25,6 +25,8 @@ private slots:
 
     void on_boton_eliminar_carro_clicked();
 
+    void on_boton_guardardatos_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
