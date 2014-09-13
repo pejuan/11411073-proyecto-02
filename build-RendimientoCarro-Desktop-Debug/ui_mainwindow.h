@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -57,6 +58,8 @@ public:
     QLabel *label_8;
     QDoubleSpinBox *sp_kmrecorridos;
     QLabel *label_9;
+    QDateEdit *date_fecha;
+    QLabel *label_10;
     QWidget *tab_2;
     QComboBox *cb_listacarros2;
     QPushButton *boton_ver_rendimiento;
@@ -124,7 +127,7 @@ public:
         cb_carros->setGeometry(QRect(10, 100, 401, 41));
         sp_litrosallenar = new QDoubleSpinBox(tab_3);
         sp_litrosallenar->setObjectName(QStringLiteral("sp_litrosallenar"));
-        sp_litrosallenar->setGeometry(QRect(580, 140, 69, 27));
+        sp_litrosallenar->setGeometry(QRect(580, 140, 101, 27));
         label_7 = new QLabel(tab_3);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(480, 146, 101, 21));
@@ -136,10 +139,17 @@ public:
         label_8->setGeometry(QRect(160, 60, 101, 21));
         sp_kmrecorridos = new QDoubleSpinBox(tab_3);
         sp_kmrecorridos->setObjectName(QStringLiteral("sp_kmrecorridos"));
-        sp_kmrecorridos->setGeometry(QRect(580, 80, 69, 27));
+        sp_kmrecorridos->setGeometry(QRect(580, 80, 111, 27));
+        sp_kmrecorridos->setMaximum(999.99);
         label_9 = new QLabel(tab_3);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(456, 80, 101, 31));
+        date_fecha = new QDateEdit(tab_3);
+        date_fecha->setObjectName(QStringLiteral("date_fecha"));
+        date_fecha->setGeometry(QRect(580, 20, 110, 27));
+        label_10 = new QLabel(tab_3);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(500, 30, 41, 21));
         tab_1->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -169,7 +179,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(2);
+        tab_1->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -196,6 +206,7 @@ public:
         boton_llenar->setText(QApplication::translate("MainWindow", "Llenar", 0));
         label_8->setText(QApplication::translate("MainWindow", "Lista de carros", 0));
         label_9->setText(QApplication::translate("MainWindow", "Km recorridos", 0));
+        label_10->setText(QApplication::translate("MainWindow", "Fecha", 0));
         tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
         boton_ver_rendimiento->setText(QApplication::translate("MainWindow", "Ver rendimiento", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));

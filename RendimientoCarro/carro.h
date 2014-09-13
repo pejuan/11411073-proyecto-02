@@ -50,6 +50,8 @@ public:
     void calculos();
     double getLempporkm() const;
     void setLempporkm(double value);
+
+    QString rendimientoString()const;
 };
 
 #endif // CARRO_H

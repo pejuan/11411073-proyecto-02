@@ -156,3 +156,16 @@ void Carro::calculos(){
     this->setLempporkm(lempporkm);
 
 }
+QString Carro::rendimientoString()const{
+    QString ss;
+    //Cambiar los doubles y enteros a QString
+    ss="Marca: "+marca+"\n"
+      +"Placa: "+placa+"\n"
+      +"Dueño: "+owner+"\n"
+      +"Cilindraje: "+QString::number(cilindraje)+"\n"
+      +"Tipo de combustible: "+tipo+"\n"
+      +"Km por litro: "+QString::number(kmporlitro)+"\n"
+      +"Km por galon: "+QString::number(kmporgal)+"\n"
+      +"Lempiras por km: "+QString::number(lempporkm)+"\n";
+    return ss;
+}

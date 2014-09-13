@@ -21,6 +21,8 @@ private slots:
 
     void on_boton_agregarcarro_clicked();
 
+    void on_boton_ver_rendimiento_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
