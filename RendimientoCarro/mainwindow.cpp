@@ -161,7 +161,7 @@ void MainWindow::on_boton_descargardatos_clicked()
     QJsonDocument doc = QJsonDocument::fromJson(content.toUtf8());
     QJsonObject root = doc.object();
     if (root.isEmpty()) {
-        QMessageBox::warning(this, "Error", "Can not import this file");
+        QMessageBox::warning(this, "Error", "No se pudo importar este archivo");
         return;
     }
     ListaCarros.clear();
@@ -188,8 +188,21 @@ void MainWindow::on_boton_descargardatos_clicked()
                 objcarro.setMarca(nodo[attr[j]].toString());
             }else if(attr[j]=="Owner"){
                 objcarro.setOwner(nodo[attr[j]].toString());
-            }else if(){
-
+            }else if(attr[j]=="Placa"){
+                objcarro.setPlaca(nodo[attr[j]].toString());
+            }else if(attr[j]=="Tipo"){
+                objcarro.setTipo(nodo[attr[j]].toString());
+            }else if(attr[j]=="Tanque"){
+                objcarro.setTanque(nodo[attr[j]].toString().toDouble());
+            }else if(attr[j]=="Kmporlitro"){
+                objcarro.setKmporlitro(nodo[attr[j]].toString().toDouble());
+            }else if(attr[j]=="Kmporgalon"){
+                objcarro.setKmporgal(nodo[attr[j]].toString().toDouble());
+            }else if(attr[j]=="Lempporkm"){
+                objcarro.setLempporkm(nodo[attr[j]].toString().toDouble());
+            }else{
+                QMessageBox::warning(this, "Error", "No se pudo importar un atributo");
+                return;
             }
         }
         ListaCarros.append(objcarro);
