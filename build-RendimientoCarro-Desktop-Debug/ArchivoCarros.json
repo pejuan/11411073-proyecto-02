@@ -11,17 +11,6 @@
         "Tipo": "Super"
     },
     "Carro1": {
-        "Cilindraje": "8",
-        "Kmporgalon": "0",
-        "Kmporlitro": "0",
-        "Lempporkm": "0",
-        "Marca": "Volvo",
-        "Owner": "Taxista",
-        "Placa": "T 9930",
-        "Tanque": "60",
-        "Tipo": "Super"
-    },
-    "Carro2": {
         "Cilindraje": "9",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
