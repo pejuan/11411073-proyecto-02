@@ -1,0 +1,24 @@
+{
+    "Carro0": {
+        "Cilindraje": "2",
+        "Kmporgalon": "6.95325e-310",
+        "Kmporlitro": "0",
+        "Lempporkm": "6.9159e-310",
+        "Marca": "Mazda",
+        "Owner": "Henry",
+        "Placa": "PR 3892",
+        "Tanque": "30",
+        "Tipo": "Super"
+    },
+    "Carro1": {
+        "Cilindraje": "2",
+        "Kmporgalon": "6.95325e-310",
+        "Kmporlitro": "6.95325e-310",
+        "Lempporkm": "6.9159e-310",
+        "Marca": "Renault",
+        "Owner": "Rembrand",
+        "Placa": "T 3569",
+        "Tanque": "32",
+        "Tipo": "Regular"
+    }
+}

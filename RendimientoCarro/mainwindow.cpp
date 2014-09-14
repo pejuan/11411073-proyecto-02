@@ -123,17 +123,17 @@ void MainWindow::on_boton_guardardatos_clicked()
             Carro objcarro = ListaCarros[i];
             QJsonObject nodo;
             nodo.insert(QString::fromStdString(string("Cilindraje")),QJsonValue(QString::number(objcarro.getCilindraje())));
-            nodo.insert(QString::fromStdString(string("Marca")),QJsonValue(QString::fromStdString(objcarro.getMarca())));
-            nodo.insert(QString::fromStdString(string("Owner")),QJsonValue(QString::fromStdString(objcarro.getOwner())));
-            nodo.insert(QString::fromStdString(string("Placa")),QJsonValue(QString::fromStdString(objcarro.getPlaca())));
-            nodo.insert(QString::fromStdString(string("Tipo")),QJsonValue(QString::fromStdString(objcarro.getTipo())));
+            nodo.insert(QString::fromStdString(string("Marca")),QJsonValue(objcarro.getMarca()));
+            nodo.insert(QString::fromStdString(string("Owner")),QJsonValue(objcarro.getOwner()));
+            nodo.insert(QString::fromStdString(string("Placa")),QJsonValue(objcarro.getPlaca()));
+            nodo.insert(QString::fromStdString(string("Tipo")),QJsonValue(objcarro.getTipo()));
             nodo.insert(QString::fromStdString(string("Tanque")),QJsonValue(QString::number(objcarro.getTanque())));
             nodo.insert(QString::fromStdString(string("Kmporlitro")),QJsonValue(QString::number(objcarro.getKmporlitro())));
             nodo.insert(QString::fromStdString(string("Kmporgalon")),QJsonValue(QString::number(objcarro.getKmporgal())));
             nodo.insert(QString::fromStdString(string("Lempporkm")),QJsonValue(QString::number(objcarro.getLempporkm())));
 
 
-            root.insert(QString::fromStdString(string("Carro")),QJsonValue(nodo));
+            root.insert(QString::fromStdString(string("Carro"))+QString::number(i),QJsonValue(nodo));
 
 
         }
