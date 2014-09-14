@@ -210,7 +210,9 @@ void MainWindow::on_boton_descargardatos_clicked()
 
     }
 
-
+    ui->cb_carros->addItems(Listastrings);
+    ui->cb_listacarros2->addItems(Listastrings);
+    ui->cb_carroseliminar->addItems(Listastrings);
 
 
 
