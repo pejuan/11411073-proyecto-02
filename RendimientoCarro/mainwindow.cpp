@@ -8,6 +8,9 @@
 #include <QString>
 #include <QStringList>
 #include <QMessageBox>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 
 QList<Carro> ListaCarros;
 QStringList Listastrings;
@@ -110,14 +113,26 @@ void MainWindow::on_boton_eliminar_carro_clicked()
 
 void MainWindow::on_boton_guardardatos_clicked()
 {
-    QFile file("/home/pejuan/11411073-proyecto-02/carros.dat");
+    QJsonDocument doc;
+    QJsonObject root;
+    QFile file("./prueba.json");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Error", "Can not export the file");
+    }else{
+        for(int i=0;i<ListaCarros.size();i++){
+            Carro objcarro = ListaCarros[i];
+            QJsonObject nodo;
+            nodo.insert(QString::fromStdString(string("Cilindraje")),QJsonValue(QString::number(objcarro.getCilindraje())));
+            //seguir para todos
+            root.insert(QString::fromStdString(string("Carro")),QJsonValue(nodo));
 
-    file.open(QIODevice::WriteOnly);
-    QDataStream qdstream(&file);
-    qdstream.writeRawData(reinterpret_cast<char *>(&ListaCarros),sizeof(ListaCarros));
-    file.close();
-    QMessageBox::about(this,"Mensaje","Guardado con exito");
 
+        }
+        doc.setObject(root);
+        QString result(doc.toJson());
+        QTextStream out(&file);
+        out << result;
+    }
 }
 
 void MainWindow::on_boton_descargardatos_clicked()
