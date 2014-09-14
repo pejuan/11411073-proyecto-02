@@ -31,7 +31,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_boton_llenar_clicked()
 {
     Llenados llenado;
-    int index = ui->cb_listacarros2->currentIndex();
+    int index = ui->cb_carros->currentIndex();
     llenado.setLitro(ui->sp_litrosallenar->value());
     llenado.setTipogasolina(ListaCarros[index].getTipo());
     llenado.setKilometros(ui->sp_kmrecorridos->value());
@@ -115,7 +115,7 @@ void MainWindow::on_boton_guardardatos_clicked()
 {
     QJsonDocument doc;
     QJsonObject root;
-    QFile file("./prueba.json");
+    QFile file("./ArchivoCarros.json");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Error", "Can not export the file");
     }else{
@@ -123,7 +123,16 @@ void MainWindow::on_boton_guardardatos_clicked()
             Carro objcarro = ListaCarros[i];
             QJsonObject nodo;
             nodo.insert(QString::fromStdString(string("Cilindraje")),QJsonValue(QString::number(objcarro.getCilindraje())));
-            //seguir para todos
+            nodo.insert(QString::fromStdString(string("Marca")),QJsonValue(QString::fromStdString(objcarro.getMarca())));
+            nodo.insert(QString::fromStdString(string("Owner")),QJsonValue(QString::fromStdString(objcarro.getOwner())));
+            nodo.insert(QString::fromStdString(string("Placa")),QJsonValue(QString::fromStdString(objcarro.getPlaca())));
+            nodo.insert(QString::fromStdString(string("Tipo")),QJsonValue(QString::fromStdString(objcarro.getTipo())));
+            nodo.insert(QString::fromStdString(string("Tanque")),QJsonValue(QString::number(objcarro.getTanque())));
+            nodo.insert(QString::fromStdString(string("Kmporlitro")),QJsonValue(QString::number(objcarro.getKmporlitro())));
+            nodo.insert(QString::fromStdString(string("Kmporgalon")),QJsonValue(QString::number(objcarro.getKmporgal())));
+            nodo.insert(QString::fromStdString(string("Lempporkm")),QJsonValue(QString::number(objcarro.getLempporkm())));
+
+
             root.insert(QString::fromStdString(string("Carro")),QJsonValue(nodo));
 
 
