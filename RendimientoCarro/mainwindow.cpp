@@ -151,4 +151,54 @@ void MainWindow::on_boton_guardardatos_clicked()
 void MainWindow::on_boton_descargardatos_clicked()
 {
 
+    QFile file("./ArchivoCarros.json");
+    if (!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::warning(this, "Error", "Can not import this file");
+        return;
+    }
+    QTextStream in(&file);
+    QString content = in.readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(content.toUtf8());
+    QJsonObject root = doc.object();
+    if (root.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Can not import this file");
+        return;
+    }
+    ListaCarros.clear();
+    Listastrings.clear();
+    for(int i=0;i<ui->cb_carros->count();i++){
+        ui->cb_carros->removeItem(i);
+    }
+    for(int i=0;i<ui->cb_listacarros2->count();i++){
+        ui->cb_listacarros2->removeItem(i);
+    }
+    for(int i=0;i<ui->cb_carroseliminar->count();i++){
+        ui->cb_carroseliminar->removeItem(i);
+    }
+    QStringList objects = root.keys();
+    for(int i=0;i<objects.size();i++){
+        QJsonObject nodo = root[objects[i]].toObject();
+        QStringList attr = nodo.keys();
+        Carro objcarro;
+        for(int j=0;j<attr.size();j++){
+            if(attr[j]=="Cilindraje"){
+                objcarro.setCilindraje(nodo[attr[j]].toString().toInt());
+
+            }else if(attr[j]=="Marca"){
+                objcarro.setMarca(nodo[attr[j]].toString());
+            }else if(attr[j]=="Owner"){
+                objcarro.setOwner(nodo[attr[j]].toString());
+            }else if(){
+
+            }
+        }
+        ListaCarros.append(objcarro);
+        Listastrings.append(objcarro.toString());
+
+    }
+
+
+
+
+
 }
