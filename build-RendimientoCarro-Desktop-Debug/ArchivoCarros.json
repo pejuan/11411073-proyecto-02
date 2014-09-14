@@ -1,24 +1,35 @@
 {
     "Carro0": {
-        "Cilindraje": "2",
-        "Kmporgalon": "6.95325e-310",
+        "Cilindraje": "8",
+        "Kmporgalon": "0",
         "Kmporlitro": "0",
-        "Lempporkm": "6.9159e-310",
+        "Lempporkm": "0",
         "Marca": "Mazda",
-        "Owner": "Henry",
-        "Placa": "PR 3892",
-        "Tanque": "30",
+        "Owner": "James Jones",
+        "Placa": "PTA 1086",
+        "Tanque": "60",
         "Tipo": "Super"
     },
     "Carro1": {
-        "Cilindraje": "2",
-        "Kmporgalon": "6.95325e-310",
-        "Kmporlitro": "6.95325e-310",
-        "Lempporkm": "6.9159e-310",
-        "Marca": "Renault",
-        "Owner": "Rembrand",
-        "Placa": "T 3569",
-        "Tanque": "32",
-        "Tipo": "Regular"
+        "Cilindraje": "8",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempporkm": "0",
+        "Marca": "Volvo",
+        "Owner": "Taxista",
+        "Placa": "T 9930",
+        "Tanque": "60",
+        "Tipo": "Super"
+    },
+    "Carro2": {
+        "Cilindraje": "9",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempporkm": "0",
+        "Marca": "Toyota",
+        "Owner": "Limbert Perez",
+        "Placa": "L 882",
+        "Tanque": "65",
+        "Tipo": "Diesel"
     }
 }

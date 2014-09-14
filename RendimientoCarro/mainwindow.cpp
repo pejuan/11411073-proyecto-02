@@ -113,6 +113,9 @@ void MainWindow::on_boton_eliminar_carro_clicked()
 
 void MainWindow::on_boton_guardardatos_clicked()
 {
+    for(int i=0;i<ListaCarros.size();i++){
+        ListaCarros[i].calculos();
+    }
     QJsonDocument doc;
     QJsonObject root;
     QFile file("./ArchivoCarros.json");
@@ -141,17 +144,11 @@ void MainWindow::on_boton_guardardatos_clicked()
         QString result(doc.toJson());
         QTextStream out(&file);
         out << result;
+        QMessageBox::about(this,"Mensaje de guardado","Guardado con éxito!");
     }
 }
 
 void MainWindow::on_boton_descargardatos_clicked()
 {
-    /*
-    QFile file("/home/pejuan/11411073-proyecto-02/carros.dat");
-    file.open(QIODevice::ReadOnly);
-    QDataStream stream(&file);
-    stream.readRawData(reinterpret_cast<char *>(&ListaCarros), sizeof(ListaCarros));
 
-    file.close();
-    */
 }
