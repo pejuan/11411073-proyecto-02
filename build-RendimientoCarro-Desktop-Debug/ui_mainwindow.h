@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
@@ -71,6 +72,7 @@ public:
     QPushButton *boton_descargardatos;
     QPushButton *boton_guardardatos;
     QMenuBar *menuBar;
+    QMenu *menuPejuan_s_Vehicle_Examiner;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -193,6 +195,8 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 780, 25));
+        menuPejuan_s_Vehicle_Examiner = new QMenu(menuBar);
+        menuPejuan_s_Vehicle_Examiner->setObjectName(QStringLiteral("menuPejuan_s_Vehicle_Examiner"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -200,6 +204,8 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+
+        menuBar->addAction(menuPejuan_s_Vehicle_Examiner->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -238,6 +244,7 @@ public:
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));
         boton_descargardatos->setText(QApplication::translate("MainWindow", "Descargar datos", 0));
         boton_guardardatos->setText(QApplication::translate("MainWindow", "Guardar datos", 0));
+        menuPejuan_s_Vehicle_Examiner->setTitle(QApplication::translate("MainWindow", "Pejuan's Vehicle Examiner", 0));
     } // retranslateUi
 
 };
