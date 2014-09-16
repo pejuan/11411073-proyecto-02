@@ -20,5 +20,16 @@
         "Placa": "L 882",
         "Tanque": "65",
         "Tipo": "Diesel"
+    },
+    "Carro2": {
+        "Cilindraje": "5",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempporkm": "0",
+        "Marca": "Nissan",
+        "Owner": "Sandro",
+        "Placa": "Pk 2883",
+        "Tanque": "40",
+        "Tipo": "Super"
     }
 }

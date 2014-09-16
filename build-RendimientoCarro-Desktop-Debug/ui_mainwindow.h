@@ -55,6 +55,16 @@ public:
     QComboBox *cb_carroseliminar;
     QPushButton *boton_eliminar_carro;
     QTextEdit *ta_rendimientoeliminar;
+    QWidget *tab_5;
+    QComboBox *cb_carrosmodificar;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QSpinBox *spinBox;
+    QLineEdit *lineEdit_3;
+    QComboBox *comboBox;
+    QDoubleSpinBox *doubleSpinBox;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QWidget *tab_3;
     QComboBox *cb_carros;
     QDoubleSpinBox *sp_litrosallenar;
@@ -140,6 +150,38 @@ public:
         ta_rendimientoeliminar->setObjectName(QStringLiteral("ta_rendimientoeliminar"));
         ta_rendimientoeliminar->setGeometry(QRect(480, 190, 271, 211));
         tab_1->addTab(tab_4, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QStringLiteral("tab_5"));
+        cb_carrosmodificar = new QComboBox(tab_5);
+        cb_carrosmodificar->setObjectName(QStringLiteral("cb_carrosmodificar"));
+        cb_carrosmodificar->setGeometry(QRect(30, 30, 331, 27));
+        lineEdit = new QLineEdit(tab_5);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(570, 30, 151, 27));
+        lineEdit_2 = new QLineEdit(tab_5);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(570, 80, 151, 27));
+        spinBox = new QSpinBox(tab_5);
+        spinBox->setObjectName(QStringLiteral("spinBox"));
+        spinBox->setGeometry(QRect(570, 130, 48, 27));
+        spinBox->setMinimum(2);
+        spinBox->setMaximum(12);
+        lineEdit_3 = new QLineEdit(tab_5);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(570, 180, 151, 27));
+        comboBox = new QComboBox(tab_5);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(570, 240, 171, 27));
+        doubleSpinBox = new QDoubleSpinBox(tab_5);
+        doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
+        doubleSpinBox->setGeometry(QRect(570, 300, 69, 27));
+        pushButton = new QPushButton(tab_5);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(40, 320, 131, 41));
+        pushButton_2 = new QPushButton(tab_5);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(200, 320, 131, 41));
+        tab_1->addTab(tab_5, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         cb_carros = new QComboBox(tab_3);
@@ -187,10 +229,10 @@ public:
         tab_1->addTab(tab_2, QString());
         boton_descargardatos = new QPushButton(centralWidget);
         boton_descargardatos->setObjectName(QStringLiteral("boton_descargardatos"));
-        boton_descargardatos->setGeometry(QRect(498, 10, 121, 27));
+        boton_descargardatos->setGeometry(QRect(400, 0, 121, 27));
         boton_guardardatos = new QPushButton(centralWidget);
         boton_guardardatos->setObjectName(QStringLiteral("boton_guardardatos"));
-        boton_guardardatos->setGeometry(QRect(640, 10, 111, 27));
+        boton_guardardatos->setGeometry(QRect(540, 0, 111, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -209,7 +251,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(3);
+        tab_1->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -234,6 +276,9 @@ public:
         tab_1->setTabText(tab_1->indexOf(tab), QApplication::translate("MainWindow", "Agregar Carros", 0));
         boton_eliminar_carro->setText(QApplication::translate("MainWindow", "Eliminar", 0));
         tab_1->setTabText(tab_1->indexOf(tab_4), QApplication::translate("MainWindow", "Eliminar carro", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        tab_1->setTabText(tab_1->indexOf(tab_5), QApplication::translate("MainWindow", "Modificar carro", 0));
         label_7->setText(QApplication::translate("MainWindow", "Litros a llenar", 0));
         boton_llenar->setText(QApplication::translate("MainWindow", "Llenar", 0));
         label_8->setText(QApplication::translate("MainWindow", "Lista de carros", 0));

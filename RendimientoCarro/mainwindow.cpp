@@ -65,15 +65,11 @@ void MainWindow::on_boton_agregarcarro_clicked()
     ui->tf_marca->setText("");
     ui->tf_owner->setText("");
     ui->tf_placa->setText("");
-    for(int i=0;i<ui->cb_carros->count();i++){
-        ui->cb_carros->removeItem(i);
-    }
-    for(int i=0;i<ui->cb_listacarros2->count();i++){
-        ui->cb_listacarros2->removeItem(i);
-    }
-    for(int i=0;i<ui->cb_carroseliminar->count();i++){
-        ui->cb_carroseliminar->removeItem(i);
-    }
+
+    ui->cb_carros->clear();
+    ui->cb_listacarros2->clear();
+    ui->cb_carroseliminar->clear();
+
     ui->cb_carros->addItems(Listastrings);
     ui->cb_listacarros2->addItems(Listastrings);
     ui->cb_carroseliminar->addItems(Listastrings);
