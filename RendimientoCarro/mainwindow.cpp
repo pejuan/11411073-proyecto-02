@@ -41,6 +41,9 @@ void MainWindow::on_boton_llenar_clicked()
     llenado.setGalones((ui->sp_litrosallenar->value())/0.2199);
     llenado.setFecha(ui->date_fecha->date());
     ListaCarros[index].add_llenado(llenado);
+
+    ListaCarros[index].calculos();
+
     ui->sp_litrosallenar->setValue(0.00);
     ui->sp_kmrecorridos->setValue(0.00);
 
@@ -81,7 +84,7 @@ void MainWindow::on_boton_agregarcarro_clicked()
 void MainWindow::on_boton_ver_rendimiento_clicked()
 {
     int indice = ui->cb_listacarros2->currentIndex();
-    ListaCarros[indice].calculos();
+
     ui->ta_rendimiento->setText(ListaCarros[indice].rendimientoString());
 
 }
@@ -243,19 +246,20 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_cb_carrosmodificar_currentIndexChanged(int index)
 {
-    /*ui->tf_marcamod->setText(ListaCarros[index].getMarca());
-    ui->tf_ownermod->setText(ListaCarros[index].getOwner());
-    ui->tf_placamod->setText(ListaCarros[index].getPlaca());
-    int tip=0;
-    if(ListaCarros[index].getTipo()=="Regular"){
-        tip=1;
-    }else if(ListaCarros[index].getTipo()=="Diesel"){
-        tip=2;
+    if(index>=0){
+        ui->tf_marcamod->setText(ListaCarros[index].getMarca());
+        ui->tf_ownermod->setText(ListaCarros[index].getOwner());
+        ui->tf_placamod->setText(ListaCarros[index].getPlaca());
+        int tip=0;
+        if(ListaCarros[index].getTipo()=="Regular"){
+            tip=1;
+        }else if(ListaCarros[index].getTipo()=="Diesel"){
+            tip=2;
+        }
+        ui->cb_tipomod->setCurrentIndex(tip);
+        ui->sp_cilindrajemod->setValue(ListaCarros[index].getCilindraje());
+        ui->sp_tanquemod->setValue(ListaCarros[index].getTanque());
     }
-    ui->cb_tipomod->setCurrentIndex(tip);
-    ui->sp_cilindrajemod->setValue(ListaCarros[index].getCilindraje());
-    ui->sp_tanquemod->setValue(ListaCarros[index].getTanque());
-    */
 }
 
 
