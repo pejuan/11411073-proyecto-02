@@ -290,3 +290,10 @@ void MainWindow::on_boton_modificar_clicked()
     ui->cb_carroseliminar->addItems(Listastrings);
     ui->cb_carrosmodificar->addItems(Listastrings);
 }
+
+void MainWindow::on_cb_carros_currentIndexChanged(int index)
+{
+    if(index>=0){
+        ui->label_compratipo->setText(ListaCarros[index].getTipo());
+    }
+}

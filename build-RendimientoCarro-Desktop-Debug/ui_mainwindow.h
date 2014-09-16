@@ -16,6 +16,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -81,6 +82,14 @@ public:
     QLabel *label_9;
     QDateEdit *date_fecha;
     QLabel *label_10;
+    QLineEdit *label_compratipo;
+    QLabel *label_17;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLabel *label_21;
+    QFrame *line;
+    QFrame *line_2;
     QWidget *tab_2;
     QComboBox *cb_listacarros2;
     QPushButton *boton_ver_rendimiento;
@@ -236,6 +245,35 @@ public:
         label_10 = new QLabel(tab_3);
         label_10->setObjectName(QStringLiteral("label_10"));
         label_10->setGeometry(QRect(470, 140, 41, 21));
+        label_compratipo = new QLineEdit(tab_3);
+        label_compratipo->setObjectName(QStringLiteral("label_compratipo"));
+        label_compratipo->setGeometry(QRect(560, 30, 113, 27));
+        label_compratipo->setReadOnly(true);
+        label_17 = new QLabel(tab_3);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(436, 30, 121, 20));
+        label_18 = new QLabel(tab_3);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(110, 230, 67, 17));
+        label_19 = new QLabel(tab_3);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(50, 270, 121, 17));
+        label_20 = new QLabel(tab_3);
+        label_20->setObjectName(QStringLiteral("label_20"));
+        label_20->setGeometry(QRect(50, 310, 131, 17));
+        label_21 = new QLabel(tab_3);
+        label_21->setObjectName(QStringLiteral("label_21"));
+        label_21->setGeometry(QRect(50, 350, 111, 17));
+        line = new QFrame(tab_3);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(20, 210, 231, 16));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+        line_2 = new QFrame(tab_3);
+        line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setGeometry(QRect(250, 220, 20, 171));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
         tab_1->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -275,7 +313,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(2);
+        tab_1->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -320,6 +358,11 @@ public:
         label_8->setText(QApplication::translate("MainWindow", "Lista de carros", 0));
         label_9->setText(QApplication::translate("MainWindow", "Km recorridos", 0));
         label_10->setText(QApplication::translate("MainWindow", "Fecha", 0));
+        label_17->setText(QApplication::translate("MainWindow", "Tipo combustible:", 0));
+        label_18->setText(QApplication::translate("MainWindow", "Precios", 0));
+        label_19->setText(QApplication::translate("MainWindow", "Super: Lps. 20", 0));
+        label_20->setText(QApplication::translate("MainWindow", "Regular: Lps. 16.80", 0));
+        label_21->setText(QApplication::translate("MainWindow", "Diesel: Lps. 18", 0));
         tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
         boton_ver_rendimiento->setText(QApplication::translate("MainWindow", "Ver rendimiento", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));

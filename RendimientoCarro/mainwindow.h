@@ -35,6 +35,8 @@ private slots:
 
     void on_boton_modificar_clicked();
 
+    void on_cb_carros_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 };

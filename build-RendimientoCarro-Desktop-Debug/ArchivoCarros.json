@@ -1,15 +1,15 @@
 {
     "Carro0": {
         "Cilindraje": "8",
-        "Kmporgalon": "0.555771",
-        "Kmporlitro": "2.52738",
-        "Lempaldia": "460",
-        "Lempporkm": "30",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempaldia": "0",
+        "Lempporkm": "0",
         "Marca": "Mazda",
         "Owner": "James Jones",
         "Placa": "PTA 1086",
         "Tanque": "60",
-        "Tipo": "Super"
+        "Tipo": "Regular"
     },
     "Carro1": {
         "Cilindraje": "9",
