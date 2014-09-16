@@ -64,7 +64,7 @@ public:
     QComboBox *cb_tipomod;
     QDoubleSpinBox *sp_tanquemod;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *boton_modificar;
     QLabel *label_11;
     QLabel *label_12;
     QLabel *label_13;
@@ -184,9 +184,9 @@ public:
         pushButton = new QPushButton(tab_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(30, 360, 81, 31));
-        pushButton_2 = new QPushButton(tab_5);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(610, 350, 81, 41));
+        boton_modificar = new QPushButton(tab_5);
+        boton_modificar->setObjectName(QStringLiteral("boton_modificar"));
+        boton_modificar->setGeometry(QRect(610, 350, 81, 41));
         label_11 = new QLabel(tab_5);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(480, 40, 67, 17));
@@ -307,7 +307,7 @@ public:
          << QApplication::translate("MainWindow", "Diesel", 0)
         );
         pushButton->setText(QApplication::translate("MainWindow", "Ver", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Modificar", 0));
+        boton_modificar->setText(QApplication::translate("MainWindow", "Modificar", 0));
         label_11->setText(QApplication::translate("MainWindow", "Marca:", 0));
         label_12->setText(QApplication::translate("MainWindow", "Placa:", 0));
         label_13->setText(QApplication::translate("MainWindow", "Cilindraje:", 0));

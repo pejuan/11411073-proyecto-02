@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "carro.h"
+#include <iostream>
 #include <QList>
 #include <QFile>
 #include <QDataStream>
@@ -98,7 +99,7 @@ void MainWindow::on_boton_eliminar_carro_clicked()
         ui->cb_carros->clear();
         ui->cb_carroseliminar->clear();
         ui->cb_listacarros2->clear();
-        ui->cb_carroseliminar->clear();
+        ui->cb_carrosmodificar->clear();
 
         ui->cb_carros->addItems(Listastrings);
         ui->cb_listacarros2->addItems(Listastrings);
@@ -242,7 +243,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_cb_carrosmodificar_currentIndexChanged(int index)
 {
-    ui->tf_marcamod->setText(ListaCarros[index].getMarca());
+    /*ui->tf_marcamod->setText(ListaCarros[index].getMarca());
     ui->tf_ownermod->setText(ListaCarros[index].getOwner());
     ui->tf_placamod->setText(ListaCarros[index].getPlaca());
     int tip=0;
@@ -254,9 +255,34 @@ void MainWindow::on_cb_carrosmodificar_currentIndexChanged(int index)
     ui->cb_tipomod->setCurrentIndex(tip);
     ui->sp_cilindrajemod->setValue(ListaCarros[index].getCilindraje());
     ui->sp_tanquemod->setValue(ListaCarros[index].getTanque());
+    */
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
 
+
+void MainWindow::on_boton_modificar_clicked()
+{
+    int index = ui->cb_carrosmodificar->currentIndex();
+    ListaCarros[index].setCilindraje(ui->sp_cilindrajemod->value());
+    ListaCarros[index].setMarca(ui->tf_marcamod->text());
+    ListaCarros[index].setPlaca(ui->tf_placamod->text());
+    ListaCarros[index].setTanque(ui->sp_tanquemod->value());
+    ListaCarros[index].setOwner(ui->tf_ownermod->text());
+    ListaCarros[index].setTipo(ui->cb_tipomod->currentText());
+
+    Listastrings.clear();
+    Listastrings.clear();
+    for(int i=0;i<ListaCarros.size();i++){
+        Listastrings.append(ListaCarros[i].toString());
+    }
+
+    ui->cb_carros->clear();
+    ui->cb_carroseliminar->clear();
+    ui->cb_listacarros2->clear();
+    ui->cb_carrosmodificar->clear();
+
+    ui->cb_carros->addItems(Listastrings);
+    ui->cb_listacarros2->addItems(Listastrings);
+    ui->cb_carroseliminar->addItems(Listastrings);
+    ui->cb_carrosmodificar->addItems(Listastrings);
 }
