@@ -130,7 +130,7 @@ void MainWindow::on_boton_guardardatos_clicked()
             nodo.insert(QString::fromStdString(string("Kmporlitro")),QJsonValue(QString::number(objcarro.getKmporlitro())));
             nodo.insert(QString::fromStdString(string("Kmporgalon")),QJsonValue(QString::number(objcarro.getKmporgal())));
             nodo.insert(QString::fromStdString(string("Lempporkm")),QJsonValue(QString::number(objcarro.getLempporkm())));
-
+            nodo.insert(QString::fromStdString(string("Lempaldia")),QJsonValue(QString::number(objcarro.getLempaldia())));
 
             root.insert(QString::fromStdString(string("Carro"))+QString::number(i),QJsonValue(nodo));
 
@@ -196,6 +196,8 @@ void MainWindow::on_boton_descargardatos_clicked()
                 objcarro.setKmporgal(nodo[attr[j]].toString().toDouble());
             }else if(attr[j]=="Lempporkm"){
                 objcarro.setLempporkm(nodo[attr[j]].toString().toDouble());
+            }else if(attr[j]=="Lempaldia"){
+                objcarro.setLempaldia(nodo[attr[j]].toString().toDouble());
             }else{
                 QMessageBox::warning(this, "Error", "No se pudo importar un atributo");
                 return;

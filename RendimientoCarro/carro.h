@@ -17,7 +17,7 @@ class Carro
     double kmporlitro;
     double kmporgal;
     double lempporkm;
-    double litroaldia;
+    double lempaldia;
 
 public:
     Carro();
@@ -44,14 +44,16 @@ public:
     double getKmporgal() const;
     void setKmporgal(double value);
 
-    double getLitroaldia() const;
-    void setLitroaldia(double value);
+
 
     void calculos();
     double getLempporkm() const;
     void setLempporkm(double value);
 
     QString rendimientoString()const;
+
+    double getLempaldia() const;
+    void setLempaldia(double value);
 };
 
 #endif // CARRO_H
