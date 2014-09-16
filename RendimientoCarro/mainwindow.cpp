@@ -69,10 +69,12 @@ void MainWindow::on_boton_agregarcarro_clicked()
     ui->cb_carros->clear();
     ui->cb_listacarros2->clear();
     ui->cb_carroseliminar->clear();
+    ui->cb_carrosmodificar->clear();
 
     ui->cb_carros->addItems(Listastrings);
     ui->cb_listacarros2->addItems(Listastrings);
     ui->cb_carroseliminar->addItems(Listastrings);
+    ui->cb_carrosmodificar->addItems(Listastrings);
 }
 
 void MainWindow::on_boton_ver_rendimiento_clicked()
@@ -96,9 +98,12 @@ void MainWindow::on_boton_eliminar_carro_clicked()
         ui->cb_carros->clear();
         ui->cb_carroseliminar->clear();
         ui->cb_listacarros2->clear();
+        ui->cb_carroseliminar->clear();
+
         ui->cb_carros->addItems(Listastrings);
         ui->cb_listacarros2->addItems(Listastrings);
         ui->cb_carroseliminar->addItems(Listastrings);
+        ui->cb_carrosmodificar->addItems(Listastrings);
         QMessageBox::about(this,"Mensaje","Eliminado con éxito");
     }
     ui->ta_rendimientoeliminar->setText("");
@@ -211,7 +216,47 @@ void MainWindow::on_boton_descargardatos_clicked()
     ui->cb_carros->addItems(Listastrings);
     ui->cb_listacarros2->addItems(Listastrings);
     ui->cb_carroseliminar->addItems(Listastrings);
+    ui->cb_carrosmodificar->addItems(Listastrings);
+    QMessageBox::about(this,"Mensaje de descarga","Descargado con éxito!");
 
 
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    int index = ui->cb_carrosmodificar->currentIndex();
+    ui->tf_marcamod->setText(ListaCarros[index].getMarca());
+    ui->tf_ownermod->setText(ListaCarros[index].getOwner());
+    ui->tf_placamod->setText(ListaCarros[index].getPlaca());
+    int tip=0;
+    if(ListaCarros[index].getTipo()=="Regular"){
+        tip=1;
+    }else if(ListaCarros[index].getTipo()=="Diesel"){
+        tip=2;
+    }
+    ui->cb_tipomod->setCurrentIndex(tip);
+    ui->sp_cilindrajemod->setValue(ListaCarros[index].getCilindraje());
+    ui->sp_tanquemod->setValue(ListaCarros[index].getTanque());
+
+}
+
+void MainWindow::on_cb_carrosmodificar_currentIndexChanged(int index)
+{
+    ui->tf_marcamod->setText(ListaCarros[index].getMarca());
+    ui->tf_ownermod->setText(ListaCarros[index].getOwner());
+    ui->tf_placamod->setText(ListaCarros[index].getPlaca());
+    int tip=0;
+    if(ListaCarros[index].getTipo()=="Regular"){
+        tip=1;
+    }else if(ListaCarros[index].getTipo()=="Diesel"){
+        tip=2;
+    }
+    ui->cb_tipomod->setCurrentIndex(tip);
+    ui->sp_cilindrajemod->setValue(ListaCarros[index].getCilindraje());
+    ui->sp_tanquemod->setValue(ListaCarros[index].getTanque());
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
 
 }
