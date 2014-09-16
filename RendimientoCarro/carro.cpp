@@ -151,13 +151,18 @@ void Carro::calculos(){
         lempporkm =(llenados[i].getPrecioporlitro()*llenados[i].getLitro())/(llenados[i].getKilometros());
 
     }
-    int dias = llenados[0].getFecha().daysTo(llenados[llenados.size()-1].getFecha());
-    for(int i = 0;i<llenados.size();i++){
-        lempaldia += llenados[i].getPrecioporlitro()*llenados[i].getLitro();
+    if(llenados.size()){
+        int dias = llenados[0].getFecha().daysTo(llenados[llenados.size()-1].getFecha());
+        for(int i = 0;i<llenados.size();i++){
+            lempaldia += llenados[i].getPrecioporlitro()*llenados[i].getLitro();
+        }
+        if(dias==0){
+            lempaldia = lempaldia/dias;
+        }
     }
-    if(dias==0){
-        lempaldia = lempaldia/dias;
-    }
+
+
+
     this->setLempaldia(lempaldia);
     this->setKmporlitro(kmporlitro);
     this->setKmporgal(kmporgal);
