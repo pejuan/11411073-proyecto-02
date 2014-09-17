@@ -1,10 +1,11 @@
 {
     "Carro0": {
         "Cilindraje": "8",
-        "Kmporgalon": "8.29756",
-        "Kmporlitro": "37.7333",
-        "Lempaldia": "117.6",
-        "Lempporkm": "1.52727",
+        "Kmaldia": "0",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempaldia": "0",
+        "Lempporkm": "0",
         "Marca": "Mazda",
         "Owner": "James Jones",
         "Placa": "PTA 1086",
@@ -13,10 +14,11 @@
     },
     "Carro1": {
         "Cilindraje": "9",
-        "Kmporgalon": "3.0053",
-        "Kmporlitro": "13.6667",
-        "Lempaldia": "210",
-        "Lempporkm": "2.34783",
+        "Kmaldia": "0",
+        "Kmporgalon": "0",
+        "Kmporlitro": "0",
+        "Lempaldia": "0",
+        "Lempporkm": "0",
         "Marca": "Toyota",
         "Owner": "Limbert Perez",
         "Placa": "L 8893",
@@ -25,6 +27,7 @@
     },
     "Carro2": {
         "Cilindraje": "5",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -37,6 +40,7 @@
     },
     "Carro3": {
         "Cilindraje": "8",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -49,6 +53,7 @@
     },
     "Carro4": {
         "Cilindraje": "12",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -61,6 +66,7 @@
     },
     "Carro5": {
         "Cilindraje": "9",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -73,6 +79,7 @@
     },
     "Carro6": {
         "Cilindraje": "5",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -85,6 +92,7 @@
     },
     "Carro7": {
         "Cilindraje": "6",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -97,6 +105,7 @@
     },
     "Carro8": {
         "Cilindraje": "8",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",
@@ -109,6 +118,7 @@
     },
     "Carro9": {
         "Cilindraje": "8",
+        "Kmaldia": "0",
         "Kmporgalon": "0",
         "Kmporlitro": "0",
         "Lempaldia": "0",

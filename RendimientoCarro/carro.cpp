@@ -128,6 +128,16 @@ void Carro::setLempaldia(double value)
 {
     lempaldia = value;
 }
+
+double Carro::getKmaldia() const
+{
+    return kmaldia;
+}
+
+void Carro::setKmaldia(double value)
+{
+    kmaldia = value;
+}
 Carro::Carro()
 {
     
@@ -138,7 +148,7 @@ void Carro::calculos(){
     double kmporgal=0.0;
     double lempporkm=0.0;
     double lempaldia=0.0;
-
+    double kmaldia=0.0;
 
     for(int i=0;i<llenados.size();i++){
         llenados[i].setTipogasolina(tipo);
@@ -155,14 +165,16 @@ void Carro::calculos(){
         int dias = llenados[0].getFecha().daysTo(llenados[llenados.size()-1].getFecha());
         for(int i = 0;i<llenados.size();i++){
             lempaldia += llenados[i].getPrecioporlitro()*llenados[i].getLitro();
+            kmaldia += llenados[i].getKilometros();
         }
         if(dias){
             lempaldia = lempaldia/dias;
+            kmaldia = kmaldia/dias;
         }
     }
 
 
-
+    this->setKmaldia(kmaldia);
     this->setLempaldia(lempaldia);
     this->setKmporlitro(kmporlitro);
     this->setKmporgal(kmporgal);
@@ -180,6 +192,7 @@ QString Carro::rendimientoString()const{
       +"Km por litro: "+QString::number(kmporlitro)+"\n"
       +"Km por galon: "+QString::number(kmporgal)+"\n"
       +"Lempiras por km: "+QString::number(lempporkm)+"\n"
-      +"Lempiras al dia: "+QString::number(lempaldia)+"\n";
+      +"Lempiras al dia: "+QString::number(lempaldia)+"\n"
+      +"Km al dia: "+QString::number(kmaldia)+"\n";
     return ss;
 }

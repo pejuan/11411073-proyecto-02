@@ -18,6 +18,7 @@ class Carro
     double kmporgal;
     double lempporkm;
     double lempaldia;
+    double kmaldia;
 
 public:
     Carro();
@@ -54,6 +55,8 @@ public:
 
     double getLempaldia() const;
     void setLempaldia(double value);
+    double getKmaldia() const;
+    void setKmaldia(double value);
 };
 
 #endif // CARRO_H
