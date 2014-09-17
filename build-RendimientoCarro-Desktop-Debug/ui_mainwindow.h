@@ -94,6 +94,8 @@ public:
     QComboBox *cb_listacarros2;
     QPushButton *boton_ver_rendimiento;
     QTextEdit *ta_rendimiento;
+    QTextEdit *ta_llenados;
+    QLabel *label_22;
     QPushButton *boton_descargardatos;
     QPushButton *boton_guardardatos;
     QMenuBar *menuBar;
@@ -288,6 +290,12 @@ public:
         ta_rendimiento->setEnabled(true);
         ta_rendimiento->setGeometry(QRect(430, 90, 331, 321));
         ta_rendimiento->setReadOnly(true);
+        ta_llenados = new QTextEdit(tab_2);
+        ta_llenados->setObjectName(QStringLiteral("ta_llenados"));
+        ta_llenados->setGeometry(QRect(50, 160, 311, 231));
+        label_22 = new QLabel(tab_2);
+        label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setGeometry(QRect(120, 130, 151, 17));
         tab_1->addTab(tab_2, QString());
         boton_descargardatos = new QPushButton(centralWidget);
         boton_descargardatos->setObjectName(QStringLiteral("boton_descargardatos"));
@@ -313,7 +321,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(3);
+        tab_1->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -365,6 +373,7 @@ public:
         label_21->setText(QApplication::translate("MainWindow", "Diesel: Lps. 18", 0));
         tab_1->setTabText(tab_1->indexOf(tab_3), QApplication::translate("MainWindow", "Llenar tanque", 0));
         boton_ver_rendimiento->setText(QApplication::translate("MainWindow", "Ver rendimiento", 0));
+        label_22->setText(QApplication::translate("MainWindow", "Registro de llenados", 0));
         tab_1->setTabText(tab_1->indexOf(tab_2), QApplication::translate("MainWindow", "Ver Rendimientos", 0));
         boton_descargardatos->setText(QApplication::translate("MainWindow", "Descargar datos", 0));
         boton_guardardatos->setText(QApplication::translate("MainWindow", "Guardar datos", 0));

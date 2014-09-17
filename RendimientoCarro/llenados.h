@@ -28,6 +28,7 @@ public:
     void setPrecioporlitro(double value);
     double getPrecioporgalon() const;
     void setPrecioporgalon(double value);
+    QString toString()const;
 };
 
 #endif // LLENADOS_H

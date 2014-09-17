@@ -88,6 +88,14 @@ void Llenados::setPrecioporgalon(double value)
         }
     }
 }
+QString Llenados::toString()const{
+    QString ss;
+    ss="Fecha: "+fecha.toString("dd/MM/yyyy")+"\n"
+       +"Litro:"+QString::number(litro)+"\n"
+       +"Galones: "+QString::number(galones)+"\n"
+       +"Kilómetros: "+QString::number(kilometros)+"\n _______________________________";
+    return ss;
+}
 Llenados::Llenados()
 {
 

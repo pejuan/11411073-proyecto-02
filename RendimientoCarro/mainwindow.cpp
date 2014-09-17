@@ -38,7 +38,7 @@ void MainWindow::on_boton_llenar_clicked()
     llenado.setKilometros(ui->sp_kmrecorridos->value());
     llenado.setPrecioporlitro(0);
     llenado.setPrecioporgalon(0);
-    llenado.setGalones((ui->sp_litrosallenar->value())/0.2199);
+    llenado.setGalones((ui->sp_litrosallenar->value())*0.2199);
     llenado.setFecha(ui->date_fecha->date());
     ListaCarros[index].add_llenado(llenado);
 
@@ -84,7 +84,12 @@ void MainWindow::on_boton_agregarcarro_clicked()
 void MainWindow::on_boton_ver_rendimiento_clicked()
 {
     int indice = ui->cb_listacarros2->currentIndex();
-
+    ui->ta_llenados->setText("");
+    if(!ListaCarros[indice].getLlenados().empty()){
+        for(int i=0;i<ListaCarros[indice].getLlenados().size();i++){
+            ui->ta_llenados->append(ListaCarros[indice].getLlenadosAt(i).toString());
+        }
+    }
     ui->ta_rendimiento->setText(ListaCarros[indice].rendimientoString());
 
 }
