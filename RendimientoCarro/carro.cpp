@@ -156,7 +156,7 @@ void Carro::calculos(){
         for(int i = 0;i<llenados.size();i++){
             lempaldia += llenados[i].getPrecioporlitro()*llenados[i].getLitro();
         }
-        if(dias==0){
+        if(dias){
             lempaldia = lempaldia/dias;
         }
     }

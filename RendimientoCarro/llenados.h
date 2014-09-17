@@ -12,11 +12,8 @@ class Llenados
     QString tipogasolina;
     double precioporlitro;
     double precioporgalon;
-
-
 public:
     Llenados();
-
     double getLitro() const;
     void setLitro(double value);
     QDate getFecha() const;

@@ -37,6 +37,8 @@ private slots:
 
     void on_cb_carros_currentIndexChanged(int index);
 
+    void on_cb_carroseliminar_activated(int index);
+
 private:
     Ui::MainWindow *ui;
 };

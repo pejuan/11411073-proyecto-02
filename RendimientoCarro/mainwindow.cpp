@@ -226,7 +226,7 @@ void MainWindow::on_boton_descargardatos_clicked()
 
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_clicked() //ver
 {
     int index = ui->cb_carrosmodificar->currentIndex();
     ui->tf_marcamod->setText(ListaCarros[index].getMarca());
@@ -296,4 +296,9 @@ void MainWindow::on_cb_carros_currentIndexChanged(int index)
     if(index>=0){
         ui->label_compratipo->setText(ListaCarros[index].getTipo());
     }
+}
+
+void MainWindow::on_cb_carroseliminar_activated(int index)
+{
+
 }
