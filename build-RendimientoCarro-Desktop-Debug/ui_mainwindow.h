@@ -254,7 +254,7 @@ public:
         label_17->setGeometry(QRect(436, 30, 121, 20));
         label_18 = new QLabel(tab_3);
         label_18->setObjectName(QStringLiteral("label_18"));
-        label_18->setGeometry(QRect(110, 230, 67, 17));
+        label_18->setGeometry(QRect(70, 230, 121, 17));
         label_19 = new QLabel(tab_3);
         label_19->setObjectName(QStringLiteral("label_19"));
         label_19->setGeometry(QRect(50, 270, 121, 17));
@@ -313,7 +313,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tab_1->setCurrentIndex(1);
+        tab_1->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -359,7 +359,7 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "Km recorridos", 0));
         label_10->setText(QApplication::translate("MainWindow", "Fecha", 0));
         label_17->setText(QApplication::translate("MainWindow", "Tipo combustible:", 0));
-        label_18->setText(QApplication::translate("MainWindow", "Precios", 0));
+        label_18->setText(QApplication::translate("MainWindow", "Precios por litro", 0));
         label_19->setText(QApplication::translate("MainWindow", "Super: Lps. 20", 0));
         label_20->setText(QApplication::translate("MainWindow", "Regular: Lps. 16.80", 0));
         label_21->setText(QApplication::translate("MainWindow", "Diesel: Lps. 18", 0));

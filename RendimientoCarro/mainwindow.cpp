@@ -298,7 +298,11 @@ void MainWindow::on_cb_carros_currentIndexChanged(int index)
     }
 }
 
-void MainWindow::on_cb_carroseliminar_activated(int index)
-{
 
+
+void MainWindow::on_cb_carroseliminar_currentIndexChanged(int index)
+{
+    if(index>=0){
+        ui->ta_rendimientoeliminar->setText(ListaCarros[index].rendimientoString());
+    }
 }

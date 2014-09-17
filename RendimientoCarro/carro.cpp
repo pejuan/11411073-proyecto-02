@@ -171,7 +171,7 @@ void Carro::calculos(){
 }
 QString Carro::rendimientoString()const{
     QString ss;
-    //Cambiar los doubles y enteros a QString
+
     ss="Marca: "+marca+"\n"
       +"Placa: "+placa+"\n"
       +"Dueño: "+owner+"\n"

@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -576,14 +576,14 @@
      <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>70</x>
         <y>230</y>
-        <width>67</width>
+        <width>121</width>
         <height>17</height>
        </rect>
       </property>
       <property name="text">
-       <string>Precios</string>
+       <string>Precios por litro</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_19">
